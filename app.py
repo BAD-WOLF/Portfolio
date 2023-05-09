@@ -26,7 +26,7 @@ class BackEnd:
         @self.app.route('/', methods=['GET','POST'])
         def index():
             if request.method == 'GET':
-                return render_template('index.html', langs=self.list_lang, cursos=self.list_cursos, links=self.list_cursos.values())
+                return render_template('index.html.twig', langs=self.list_lang, cursos=self.list_cursos, links=self.list_cursos.values())
             else:
                 return redirect('/404')
         @self.app.route('/<error>')
