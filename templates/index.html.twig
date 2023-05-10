@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-      <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-      <meta property="og:description" content="vai vim descrição ainda" />
-      <!-- <meta property="og:image"  content="./images/imgLink.jpeg"/> -->
-      <meta property="og:title"       content="vai vim title ainda" />
-      <link rel="stylesheet" href="{{ url_for('static', filename='style/css/default.css') }}" />
-      <title>Devs-Absolutos</title>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <meta property="og:description" content="vai vim descrição ainda" />
+        <!-- <meta property="og:image"  content="./images/imgLink.jpeg"/> -->
+        <meta property="og:title"       content="vai vim title ainda" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/css/default.css') }}" />
+        <!-- Adicione esses links no head -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+        <title>Devs-Absolutos</title>
     </head>
     <body>
       <center>
-        <nav>
-            <ul>
-                <li>Inicio</li>
-                <li>Discord</li>
-                <li>Softwares</li>
-                <li>Contato</li>
-            </ul>
+        <h5>&bull;Inicio &bull;Discord &bull;Softwares &bull;Contato</h5>
         </nav>
         <h1>Bem Vindos(as)</h1>
         <div>
@@ -25,15 +25,24 @@
             Linguagens Usadas Para Criação Dessa Plataforma São:<br/>
             </p>
             
+            <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Linguagens</button>
+                <div class="dropdown-menu">
+                    {% for i in langs %}
+                        <div class="dropdown-item">{{ i }}</div>
+                        <div class="dropdown-divider"></div>
+                    {% endfor %}
+                </div>
+            </div>
+
             <div class="list">
-                <div class=titulo>Linguagens</div>
-                <ul>
-                  {% for lang in langs %}
-                      <li>{{lang}}</li>
-                  {% endfor %}
+                <div class="titulo">front-end by</div>
+                <ul class="linguagens escondido">
+                    {% for i in th %}
+                        
+                    {% endfor %}
                 </ul>
             </div>
-            <script src="{{ url_for('static', filename='JS/list.js') }}"></script>
 
             
             </p>
@@ -47,30 +56,12 @@
         <div>
             <h3>Cursos Recomendados Pelos Criadores:</h3>
             
-              {% for curso in cursos %}
+            {% for curso in cursos %}
                 <br/>{{curso}}<br/>
-
-                  {% if curso == 'Python' %}
-                    <a href="{{cursos['Python']}}">
-                      <input type="submit" value="Assistir Curso De {{curso}}!">
-                    </a><br/>
-
-                  {% elif curso == 'JavaScript' %}
-                    <a href="{{cursos['JavaScript']}}">
-                      <input type="submit" value="Assistir Curso De {{curso}}!">
-                    </a><br/>
-
-                  {% elif curso == 'PHP' %}
-                    <a href="{{cursos['PHP']}}" >
-                      <input type="submit" value="Assistir Curso De {{curso}}!">
-                    </a><br/>
-
-                  {% else %}
-                    <a href="{{cursos['HTML & CSS']}}">
-                      <input type="submit" value="Assistir Curso De {{curso}}!" ></a>
-                    <br/>
-                  {% endif %}
-                {% endfor %}
+                <a href="{{cursos[curso]}}">
+                    <input type="submit" value="Assistir Curso De {{curso}}!">
+                </a><br/>
+            {% endfor %}
             
         </div>
       </center>

@@ -1,8 +1,4 @@
-const listaSuspensa = document.querySelector('.lista-suspensa');
-const titulo = listaSuspensa.querySelector('.titulo');
-
-titulo.addEventListener('click', function() {
-  listaSuspensa.classList.toggle('aberto');
+$(".titulo").click(function() {
+    $(".linguagens").toggleClass("escondido aberto");
 });
-alert("test");
 
