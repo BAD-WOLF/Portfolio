@@ -12,7 +12,18 @@ center {
     transform: translate(-50%, -50%);
 }
 
-/*
+.btn-list {
+    border-style: groove;
+    border-color: black;
+    border-width: 7px;
+    width: 100%;
+}
+
+.div-divider {
+    background-color: black;
+    height: 2%;
+}
+
 h5{
     text-shadow: 2px 2px 4px blue;
 }
@@ -20,6 +31,6 @@ h5{
 h1, p {
     text-shadow: 2px 2px 4px green;
 }
-*/
+
 
 

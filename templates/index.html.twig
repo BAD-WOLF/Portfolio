@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta property="og:description" content="vai vim descrição ainda" />
         <!-- <meta property="og:image"  content="./images/imgLink.jpeg"/> -->
@@ -14,53 +14,48 @@
     <body>
       <center>
         <h5>&bull;Inicio &bull;Discord &bull;Softwares &bull;Contato</h5>
-
         <h1>Bem Vindos(as) 2</h1>
-        <div>
-            <p>
-            Essa Plataforma Foi Desenvolvida Para Estutandes de Programação<br/>
-            Linguagens Usadas Para Criação Dessa Plataforma São:<br/>
-            </p>
-            
-            <div class="btn-group">
-                <button type="button" id="btn-tech" class="btn btn-info" aria-haspopup="true" aria-expanded="false">Linguagens</button>
-            </div>
-
-            <div id="technologies" style="display: none">
-                {% for i in langs %}
-                    <div class="dropdown-item">{{ i }}</div>
-                    <div class="dropdown-divider"></div>
-                {% endfor %}
-            </div>
-
-            <div class="list">
-                <div class="titulo">front-end by</div>
-                <ul class="linguagens escondido">
-                    {% for i in th %}
-                        
-                    {% endfor %}
-                </ul>
-            </div>
-            
-            </p>
-            <p>
-                Nossa Plataforma Disponibiliza Softwares Para Estudos De Programação<br/>
-                No Botão Abaixo Deixamos Os Scripts Criados pelos Desenvolvedor Da Plataforma Atual.<br/>
-            </p>
-            <input type="submit" value="Scripts">
-        </div>
-
-        <div>
-            <h3>Cursos Recomendados Pelos Criadores:</h3>
-            
-            {% for curso in cursos %}
-                <br/>{{curso}}<br/>
-                <a href="{{cursos[curso]}}">
-                    <input type="submit" value="Assistir Curso De {{curso}}!">
-                </a><br/>
+        <p>
+        Essa Plataforma Foi Desenvolvida Para Estutandes de Programação<br/>
+        Linguagens Usadas Para Criação Dessa Plataforma São:<br/>
+        </p>
+        
+        <button type="button" id="btn-lang" class="btn-list btn-info" aria-haspopup="true" aria-expanded="false">
+            Linguagens
+        </button>
+        <div id="list-lang" style="display: none;">
+            {% for i in langs %}
+                <div class="div-item">{{ i }}</div>
+                <div class="div-divider"></div>
             {% endfor %}
-            
         </div>
+
+        <br/>
+
+        <button type="button" id="btn-pttn" class="btn-list btn-info" aria-haspopup="true" aria-expanded="false">
+            Front-end by
+        </button>
+        <div id="list-me" style="display: none;">
+            {% for i in th %}
+                <a href={{ th[i] }}><div class="div-iten">{{ i }}</div></a>
+                <div class="div-divider"></div>
+            {% endfor %}
+        </div>
+        
+        <p>
+            Nossa Plataforma Disponibiliza Softwares Para Estudos De Programação<br/>
+            No Botão Abaixo Deixamos Os Scripts Criados pelos Desenvolvedor Da Plataforma Atual.<br/>
+        </p>
+        <input type="submit" value="Scripts">
+
+        <h3>Cursos Recomendados Pelos Criadores:</h3>
+        
+        {% for curso in cursos %}
+            <br/>{{curso}}<br/>
+            <a href="{{cursos[curso]}}">
+                <button id="btn-c">Curso {{curso}}!</button>
+            </a><br/>
+        {% endfor %}
       </center>
     </body>
     <footer></footer>
@@ -68,9 +63,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-    <script type="text/javascript">
-        $('#btn-tech').on('click', function() {
-            $('#technologies').toggle('slow');
-        });
-    </script>
+    <script src="{{ url_for("static", filename="JS/list.js") }}" type="text/javascript"></script>
 </html>
