@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta property="og:description" content="vai vim descrição ainda" />
-        <!-- <meta property="og:image"  content="./images/imgLink.jpeg"/> -->
+        <meta property="og:image"  content="https://mir-s3-cdn-cf.behance.net/project_modules/disp/bc54b7109204737.5fceb98ae45dc.jpg"/>
         <meta property="og:title"       content="vai vim title ainda" />
         <link rel="stylesheet" href="{{ url_for('static', filename='style/css/default.css') }}" />
         <!-- Adicione esses links no head -->
@@ -14,7 +14,7 @@
     <body>
       <center>
         <h5>&bull;Inicio &bull;Discord &bull;Softwares &bull;Contato</h5>
-        <h1>Bem Vindos(as)</h1>
+        <h1>Bem Vindos(as) 2</h1>
         <p>
         Essa Plataforma Foi Desenvolvida Para Estutandes de Programação<br/>
         Linguagens Usadas Para Criação Dessa Plataforma São:<br/>
@@ -33,10 +33,9 @@
         <br/>
 
         <button type="button" id="btn-pttn-me" class="btn-list btn-info" aria-haspopup="true" aria-expanded="false">
-            Front-End By
+            Front-End by
         </button>
          <div id="list-me" style="display: none;">
-            <img id="img-me"></img>
             {% for i in th %}
                 <div onClick="window.location.href='{{ th[i] }}'" class="div-item-me"><a>{{ i }}</a></div>
                 <div class="div-divider"></div>
@@ -46,11 +45,11 @@
         <br/>
 
         <button type="button" id="btn-pttn-look" class="btn-list btn-info" aria-haspopup="true" aria-expanded="false">
-            Back-End By
+            Back-End
         </button>
         <div id="list-look" style="display: none;">
-            {% for i in look %}
-                <div onClick="window.location.href='{{ look[i] }}'" class="div-item-me"><a>{{ i }}</a></div>
+            {% for i in th %}
+                <div onClick="window.location.href='{{ th[i] }}'" class="div-item-look"><a>{{ i }}</a></div>
                 <div class="div-divider"></div>
             {% endfor %}
         </div>
