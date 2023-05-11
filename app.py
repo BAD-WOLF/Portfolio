@@ -9,15 +9,18 @@ class BackEnd:
         self.app         = Flask(__name__);
         self.name        = 'Portfolio';
         self.address     = ['127.0.0.1', 1234];
+        self.look        = {} # BOTA SEUS DADOS AQUI
         self.th          = {
-                            "github":"https://github.com/BAD-WOLF",
+                            "Github":"https://github.com/BAD-WOLF",
                             "LinkedIn":
                                 "https://www.linkedin.com/in/matheu-vieira-40a36923b",
-                            "gmail":
+                            "Gmail":
                                 "mailto:matheusviaira160@gmail.com",
-                            "wpp":
-                                "https://t.me/5571984056597",
-                            "about":
+                            "WhatsApp":
+                                "https://wa.me/5571984056597",
+                            "Telegram":
+                                "https://t.me/MATHEU_API",
+                            "About":
                                 "https://cognus.hunterco.com.br/disc/report/62ccacec56df1e001e688e9d?backTo=https%3A%2F%2Fcognus.hunterco.com.br%2Fview%2F62ccac6f56df1e001e688e7b%3FtmpAuth%3Dc9c9ebf0016d11edba226b9bbdcaaf43&back_to=https%3A%2F%2Fvagas.hunterco.com.br%2Ftasks%3Fc%3D4740"
                             };
         self.list_lang   = [
@@ -50,15 +53,16 @@ class BackEnd:
                                        langs  = self.list_lang,
                                        cursos = self.list_cursos,
                                        th     = self.th,
+                                       look   = self.look,
                                        links  = self.list_cursos.values()
                                        );
             else:
-                return redirect('/404')
+                return redirect('/404');
         @self.app.route('/<error>')
         def notfold(error):
-            return render_template('404.html')
+            return render_template('404.html');
 
-        self.app.run(debug=True, host=self.address[0], port=self.address[1])
+        self.app.run(debug=True, host=self.address[0], port=self.address[1]);
 
 if __name__ == '__main__':
-    BackEnd().RunPage()
+    BackEnd().RunPage();

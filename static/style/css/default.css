@@ -2,6 +2,13 @@ body {
     background-image: url('https://programadoresdepre.com.br/wp-content/webp-express/webp-images/uploads/2022/06/linguagem-de-programacao.jpg.webp');
 }
 
+#img-me {
+    border-style: groove;
+    border-width: 20px;
+    border-radius: 100%;
+    width: 30%;
+}
+
 center {
     background-color: grey;
     display: inline-block;
@@ -17,6 +24,28 @@ center {
     border-color: black;
     border-width: 7px;
     width: 100%;
+}
+
+.div-item-lang {
+    border-style: solid;
+}
+
+.div-item-me {
+    border-style: solid;
+    margin-top: 1%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.div-item-look {
+    border-style: solid;
+    margin-top: 1%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .div-divider {

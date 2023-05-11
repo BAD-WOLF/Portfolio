@@ -14,7 +14,7 @@
     <body>
       <center>
         <h5>&bull;Inicio &bull;Discord &bull;Softwares &bull;Contato</h5>
-        <h1>Bem Vindos(as) 2</h1>
+        <h1>Bem Vindos(as)</h1>
         <p>
         Essa Plataforma Foi Desenvolvida Para Estutandes de Programação<br/>
         Linguagens Usadas Para Criação Dessa Plataforma São:<br/>
@@ -25,35 +25,49 @@
         </button>
         <div id="list-lang" style="display: none;">
             {% for i in langs %}
-                <div class="div-item">{{ i }}</div>
+                <div class="div-item-lang">{{ i }}</div>
                 <div class="div-divider"></div>
             {% endfor %}
         </div>
 
         <br/>
 
-        <button type="button" id="btn-pttn" class="btn-list btn-info" aria-haspopup="true" aria-expanded="false">
-            Front-end by
+        <button type="button" id="btn-pttn-me" class="btn-list btn-info" aria-haspopup="true" aria-expanded="false">
+            Front-End By
         </button>
-        <div id="list-me" style="display: none;">
+         <div id="list-me" style="display: none;">
+            <img id="img-me"></img>
             {% for i in th %}
-                <a href={{ th[i] }}><div class="div-iten">{{ i }}</div></a>
+                <div onClick="window.location.href='{{ th[i] }}'" class="div-item-me"><a>{{ i }}</a></div>
                 <div class="div-divider"></div>
             {% endfor %}
         </div>
-        
+
+        <br/>
+
+        <button type="button" id="btn-pttn-look" class="btn-list btn-info" aria-haspopup="true" aria-expanded="false">
+            Back-End By
+        </button>
+        <div id="list-look" style="display: none;">
+            {% for i in look %}
+                <div onClick="window.location.href='{{ look[i] }}'" class="div-item-me"><a>{{ i }}</a></div>
+                <div class="div-divider"></div>
+            {% endfor %}
+        </div>
+ 
+       
         <p>
             Nossa Plataforma Disponibiliza Softwares Para Estudos De Programação<br/>
             No Botão Abaixo Deixamos Os Scripts Criados pelos Desenvolvedor Da Plataforma Atual.<br/>
         </p>
-        <input type="submit" value="Scripts">
+        <input type="submit" value="Scripts"/>
 
         <h3>Cursos Recomendados Pelos Criadores:</h3>
         
         {% for curso in cursos %}
             <br/>{{curso}}<br/>
             <a href="{{cursos[curso]}}">
-                <button id="btn-c">Curso {{curso}}!</button>
+                <button id="btn-c" class="btn btn-success">Curso {{curso}}!</button>
             </a><br/>
         {% endfor %}
       </center>
